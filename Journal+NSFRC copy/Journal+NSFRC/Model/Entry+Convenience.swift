@@ -10,12 +10,12 @@ import Foundation
 import CoreData
 
 extension Entry {
-    convenience init(title:String, body: String, timestamp: Date = Date(), context: NSManagedObjectContext = CoreDataStack.context) {
+    // Declare our convenience init. Add default value for MOC and Date. Call memberwise init of Entry and initialize it with context.
+    convenience init(title: String, body: String, timestamp: Date = Date(), context: NSManagedObjectContext = CoreDataStack.context) {
         
         self.init(context: context)
         self.title = title
         self.body = body
         self.timestamp = timestamp
-        
     }
 }
